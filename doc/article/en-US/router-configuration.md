@@ -26,6 +26,20 @@ To use Aurelia's router, your component view must have a `<router-view></router-
 </code-listing>
 
 <code-listing heading="Basic Route Configuration">
+  <source-code lang="ES 2015/2016">
+ export class App {
+  configureRouter(config: RouterConfiguration, router: Router): void {
+    this.router = router;
+    config.title = 'Aurelia';
+    config.map([
+      { route: ['', 'home'],       name: 'home',       moduleId: 'home/index' },
+      { route: 'users',            name: 'users',      moduleId: 'users/index',   nav: true },
+      { route: 'users/:id/detail', name: 'userDetail', moduleId: 'users/detail' },
+      { route: 'files/*path',      name: 'files',      moduleId: 'files/index',   href:'#files',   nav: 0 }
+    ]);
+  }
+} 
+  </source-code>
   <source-code lang="TypeScript">
     import {RouterConfiguration, Router} from 'aurelia-router';
     export class App {
