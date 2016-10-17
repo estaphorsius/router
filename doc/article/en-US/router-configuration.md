@@ -26,7 +26,7 @@ To use Aurelia's router, your component view must have a `<router-view></router-
 </code-listing>
 
 <code-listing heading="Basic Route Configuration">
-  <source-code lang="ES 2015/2016">
+  <source-code lang="ES2015">
     export class App {
       configureRouter(config, router) {
         this.router = router;
